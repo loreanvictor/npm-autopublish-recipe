@@ -1,0 +1,15 @@
+steps:
+  - read: auto_publish
+    from: args.auto_publish
+    fallback:
+      prompt: |
+        Should the package be published automatically (when pushed to main branch with a version bump)?
+        You MUST add a GitHub secret named NPM_TOKEN for this to work if you choose yes.
+      choices:
+        - yes
+        - no: ''
+  
+  - if: auto_publish
+    copy: workflow.yml
+    to: ../.github/workflows/publish.yml
+  
