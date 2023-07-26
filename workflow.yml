@@ -23,8 +23,11 @@ jobs:
       - name: Check Linting
         run: npm run lint
 
+        # NPM has no dark mode, so we need to remove
+        # dark mode only images from it so that it looks
+        # ok on NPM.
       - name: Fix README for NPM
-        run: sed -i '/logo-dark\.svg/d' README.md
+        run: sed -i '/#gh-dark-mode-only/d' README.md
       
       - name: Publish
         env:

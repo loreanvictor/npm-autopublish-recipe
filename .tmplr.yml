@@ -8,8 +8,24 @@ steps:
       choices:
         - yes
         - no: ''
-  
+
   - if: auto_publish
-    copy: workflow.yml
-    to: ../.github/workflows/publish.yml
+    steps:
+      - read: test_command
+        from: args.test_command
+        fallback:
+          prompt: |
+            What command should be run to test the package? Ideally, this command should check for sufficient
+            coverage as well, since if it passes, the package will be published.
+          default: npm test
+  
+      - read: lint_command
+        from: args.lint_command
+        fallback:
+          prompt: |
+            What command should be run to check code quality?
+          default: echo "no linting command specified"
+
+      - copy: workflow.yml
+        to: ../.github/workflows/publish.yml
   
