@@ -18,10 +18,10 @@ jobs:
         run: npm ci
 
       - name: Check Coverage
-        run: npm run coverage
+        run: {{ tmplr.test_command }}
 
       - name: Check Linting
-        run: npm run lint
+        run: {{ tmplr.lint_command }}
 
         # NPM has no dark mode, so we need to remove
         # dark mode only images from it so that it looks
