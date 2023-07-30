@@ -11,7 +11,7 @@ A [tmplr](https://github.com/loreanvictor/tmplr) recipe to add an NPM autopublis
 👉 Use it on your project:
 
 ```bash
-npx tmplr use loreanvictor/npm-autopublish-recipe
+npx tmplr use trpcs/npm-autopublish
 ```
 
 <br>
@@ -23,7 +23,7 @@ npx tmplr use loreanvictor/npm-autopublish-recipe
 steps:
   # ...
 
-  - use: loreanvictor/npm-autopublish-recipe
+  - use: trpcs/npm-autopublish
 
   # ...
 ```
