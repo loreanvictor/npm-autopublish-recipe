@@ -38,7 +38,7 @@ If the following arguments are provided, the recipe won't prompt the user for th
 
 ```yml
 # .tmplr.yml
-use: loreanvictor/npm-autopublish-recipe
+use: trcps/npm-autopublish
 with:
   auto_publish: yes
   test_command: npm run coverage
